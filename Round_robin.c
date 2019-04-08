@@ -2,7 +2,11 @@
 struct process
 {
  	char name;
- 	int at,bt,wt,tt,rt;
+ 	int at; //Arival Time
+	int bt; //Burst Time
+	int wt; //Waiting Time
+	int tt; //Turnaround Time
+	int rt; //Run Time
  	int completed;
 }p[10];
 int n;
