@@ -7,6 +7,7 @@ Ques. 5. CPU schedules N processes which arrive at different time intervals and 
 Solution:-
 In Priority_round_robin.cpp the code implements priority based Round robin algorithm in which the after a particular Time Quantum the process preemption occurs and the process with the highest priority in the queue will get the chance to use the CPU. 
 
+The Image file named withprioirty.jpg contains the sample output/ test case runned.
 
 
 Ques. 16. Design a scheduler that can schedule the processes arriving system at periodical intervals. Every process is assigned with a fixed time slice t milliseconds. If it is not able to complete its execution within the assigned time quantum, then automated timer generates an interrupt. The scheduler will select the next process in the queue and dispatcher dispatches the process to processor for execution. Compute the total time for which processes were in the queue waiting for the processor. Take the input for CPU burst, arrival time and time quantum from the user.
@@ -16,3 +17,4 @@ Solution:-
 Round_Robin.c contains the code for implementing the round robin algorithm in which after a particular time Quantum the process preemption
 occurs and the next process gets the chance to use the CPU.This kind of algorithm reduces starvation(if the Time Quantum is not too large)
 
+The Image file named robin.jpg contains the sample output/test case runned.
