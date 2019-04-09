@@ -1,11 +1,24 @@
 #include <iostream>
 #include<stdio.h>
 using namespace std;
-struct process{
-    int arr,burst,prior,firstt,i,status,rect,burl,compt,waitingt,turnaroundt;
+struct process{  //to store the different data of the processes and some variable for the flow of the linkedlist
+    int arr;     //arival time
+    int burst;   //burst time
+    int prior;   //priority
+    int firstt;  //flag
+    int i;
+    int status;   // flag
+    int rect;    // flag
+    int burl;   //copy of burst time
+    int compt;  
+    int waitingt;  //waiting time
+    int turnaroundt; //Turnaround time
 }*run=NULL;
-int n,tq,tburst=0;
-struct node{
+int n; //number of processes
+int tq;//Time Quantum
+int tburst=0;//timeBurst
+
+struct node{             //To use linked list
     struct process *q;
     struct node *next;
 }*start=NULL,*last,*cn;
@@ -33,13 +46,10 @@ int main()
         p[i].firstt=-1;
     }
     printf("\n\n Details entered are following:");;
-   // printf("\n ___________________________________________________________________");
     printf("\n|\tPROCESS\t\t|\tARRIVAL TIME\t|\tBURST TIME\t|\tPRIORITY\t|");
-    //printf("\n|_______________|___________________|_______________|_______________|");
     for(int i=0;i<n;i++)
     {
         printf("\n|\t\tP%d\t\t|\t\t%d\t\t|\t\t%d\t\t|\t\t%d\t\t|",p[i].i,p[i].arr,p[i].burst,p[i].prior);
-      //  printf("\n|_______________|___________________|_______________|_______________|");
     }
     for(int time=0;pl!=0;time++)
     {
@@ -202,13 +212,10 @@ int main()
         }
     }
     printf("\n\n\nDetails after scheduling are :");
-    //printf("\n _______________________________________________________________________________________________________________");
     printf("\n|\tPROCESS\t\t|\tARRIVAL TIME\t|\tBURST TIME\t|\tPRIORITY\t|\tWAITING TIME  \t|\tTURN AROUND TIME  \t|");
-   // printf("\n|_______________|___________________|_______________|_______________|___________________|_______________________|");
     for(int i=0;i<n;i++)
     {
         printf("\n|\t\tP%d\t|\t\t%d\t|\t\t%d\t\t|\t\t%d\t\t|\t\t%d\t\t|\t\t\t%d\t\t\t|",p[i].i,p[i].arr,p[i].burst,p[i].prior,p[i].waitingt,p[i].turnaroundt);
-      //  printf("\n|_______________|___________________|_______________|_______________|___________________|_______________________|");
     }
     float awt=0,att=0;
     for(int i=0;i<n;i++)
@@ -221,3 +228,10 @@ int main()
     printf("\nAverage  waiting time = %f ",awt);
     printf("\nAverage Turn Around Time = %f \n",att);
 }
+
+
+/*
+All RIGHTS Reserved by
+            --dom_shadow
+            --1369ltd.
+*/
