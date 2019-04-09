@@ -1,5 +1,5 @@
 #include<stdio.h>
-struct process
+struct process //A structure for storing the different data of the process.
 {
  	char name;
  	int at; //Arival Time
@@ -12,7 +12,7 @@ struct process
 int n;
 int q[100];  //queue
 int front=-1,rear=-1;
-int enqueue(int i)
+int enqueue(int i) //a function to insert the process in the Queue
 {
  	if(rear==100)
  	{
@@ -24,7 +24,7 @@ int enqueue(int i)
 		front=0;
 }
 
-int dequeue()
+int dequeue()//a funtion to delete the process from the Queue
 {
  	if(front==-1)
  	{
@@ -38,7 +38,7 @@ int dequeue()
  		front++;
  	return temp;
 }
-int isInQueue(int i)
+int isInQueue(int i) //a function to check wheather the process is in the Queue or not. If it is in the Queue then return 1 else return 0
 {
 	int k;
 	for(k=front;k<=rear;k++)
@@ -49,7 +49,7 @@ int isInQueue(int i)
 	return 0;
 
 }
-void sortByArrival()
+void sortByArrival() //Since the process which didn't came to existance cannot be excuted so first that processes should be sorted acc. to the arival time.
 {
 	struct process temp;
 	int i,j;
@@ -76,8 +76,11 @@ void main()
  	for(i=0,c='A';i<n;i++,c++)
  	{
  		p[i].name=c;
- 		printf("\nEnter the arrival time and burst time of process %c: ",p[i].name);
- 		scanf("%d%d",&p[i].at,&p[i].bt);
+		printf("\nEnter the details for process %c : ",p[i].name);
+ 		printf("\nEnter the arrival time: ");
+ 		scanf("%d",&p[i].at);
+		printf("\nEnter the Burst time :");
+		scanf("%d",&p[i].bt);
  		p[i].rt=p[i].bt;
  		p[i].completed=0;
  		sum_bt+=p[i].bt;
@@ -86,7 +89,7 @@ void main()
 	printf("\nEnter the time quantum:");
 	scanf("%d",&tq);
 	int min_time = p[0].at;
-	sortByArrival();
+	sortByArrival();      //sorting the process acc. to the arival time
 	enqueue(0);          // enqueue the first process
 	printf("Process execution order: ");
 	for(time=p[0].at;time<sum_bt;)       // run until the total burst time reached
