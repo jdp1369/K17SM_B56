@@ -141,8 +141,7 @@ void main()
 }
 
 /*
-if you don't get the correct output then you are worng not me.
-Never ever ever never challange my code
-
+ALL RIGHTS Reserved
+	--dom_shadow
 	--1369ltd
 */
