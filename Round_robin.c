@@ -77,9 +77,9 @@ void main()
  	{
  		p[i].name=c;
 		printf("\nEnter the details for process %c : ",p[i].name);
- 		printf("\nEnter the arrival time: ");
+ 		printf("\nEnter the arrival time : ");
  		scanf("%d",&p[i].at);
-		printf("\nEnter the Burst time :");
+		printf("\nEnter the Burst time : ");
 		scanf("%d",&p[i].bt);
  		p[i].rt=p[i].bt;
  		p[i].completed=0;
