@@ -5,4 +5,4 @@ occurs and the next process gets the chance to use the CPU.This kind of algorith
 
 
 
-In Priority_round_robin.cpp the code contains code which implements priority based Round robin algo
+In Priority_round_robin.cpp the code implements priority based Round robin algorithm in which the after a particular Time Quantum the process preemption occurs and the process with the highest priority in the queue will get the chance to use the CPU. 
